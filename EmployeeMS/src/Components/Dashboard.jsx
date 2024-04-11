@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Dashboard = () => {
@@ -42,7 +42,7 @@ const Dashboard = () => {
                             </li >
                             <li className="w-100">
                                 <Link
-                                    to="/dashboard/employee"
+                                    to="/dashboard/category"
                                     className="nav-link px-0 align-middle text-white"
                                 >
                                     <i className="fs-4 bi-columns ms-2"></i>
@@ -75,10 +75,11 @@ const Dashboard = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col">
-                    <div>
+                <div className="col p-0 m-0">
+                    <div className="p-2 d-flex justify-content-center shadow">
                         <h4>Employee Management System</h4>
                     </div>
+                    <Outlet />
                 </div>
             </div>
         </div>
