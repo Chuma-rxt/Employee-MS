@@ -7,7 +7,7 @@ const Category = () => {
       <div className='d-flex justify-content-center'>
         <h3>Category List</h3>
       </div>
-      <Link to="dashboard/add_category" className='btn btn-success'>Add Category</Link>
+      <Link to='/dashboard/add_category' className='btn btn-success'>Add Category</Link>
     </div>
   )
 }

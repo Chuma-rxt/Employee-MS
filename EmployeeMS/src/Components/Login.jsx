@@ -35,7 +35,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor="email"><strong>Email:</strong></label>
-            <input type="email" name='email' autoCapitalize='off' placeholder='Enter Eamail'
+            <input type="email" name='email' autoCapitalize='off' placeholder='Enter Email'
              onChange={(e) => setValues({...values, email : e.target.value})} className='form-control rounded-0' />
           </div>
           <div className='mb-3'>
