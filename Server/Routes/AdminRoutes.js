@@ -21,6 +21,14 @@ router.post("/adminlogin", (req, res) => {
             return res.json({ loginStatus: false, Error: "wrong email or password" });
         }
     });
+});
+
+router.post('/add_category', (req, res) => {
+    const sql = "INSERT INTO category (`name`) VALUES (?)"
+    con.query(sql, [req.body.category], (err, result) => {
+        if(err) return res.json({Status: faslse, Error: "Query Error"})
+        return res.json({Status: true})
+    })
 })
 
 export { router as adminRouter }

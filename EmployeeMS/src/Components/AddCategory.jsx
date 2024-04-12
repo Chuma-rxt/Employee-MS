@@ -1,12 +1,19 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 
 const AddCategory = () => {
   const [category, setCategory] = useState()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:3000/auth/add_category', {category})
+    .then(result => console.log(result.data))
+    .catch(err => console.log(err))
+  }
   return (
     <div className='d-flex justify-content-center align-items-center h-75' >
       <div className='p-3 rounded w-25 border'>
         <h2>Add Category</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor="category"><strong>Category:</strong></label>
             <input type="email" name='category' autoCapitalize='off' placeholder='Enter Category'
